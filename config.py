@@ -26,19 +26,6 @@ bot = interactions.Client(token=TOKEN)
             #     ),
             # ],
         ),
-        interactions.Option(
-            name="2000",
-            description="psekfjlmksefmlse",
-            type=interactions.OptionType.SUB_COMMAND,
-            # options=[
-            #     interactions.Option(
-            #         name="second_option",
-            #         description="A descriptive description",
-            #         type=interactions.OptionType.STRING,
-            #         required=False,
-            #     ),
-            # ],git commit -m "first commit"
-        ),
     ],
 )
 async def cmd(ctx: interactions.CommandContext, sub_command: str, second_option: str = "", option: int = None):
