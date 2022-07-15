@@ -11,7 +11,7 @@ bot = interactions.Client(token=TOKEN)
 @bot.command(
     name="config",
     description="Pour demander une configuration",
-    scope=925833729237196870,
+    scope=996907904324091944,
     options=[
         interactions.Option(
             name="1500",
