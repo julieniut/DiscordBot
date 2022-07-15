@@ -21,9 +21,10 @@ Si j'ai rien oublié on est bon, vous serez au point.
 
 Pour éviter des soucis de merge (quand deux personnes modifient le même fichier), je pense qu'il faut que chacun fasse un fichier par feature à ajouter pour pouvoir bidouiller de son côté sans tout casser. Il faut aussi savoir que grâce à Github vous pourrez pas tout casser justement, il y aura toujours un historique sur le repo et on pourra revenir en arrière.
 
-## Les ressources pour avancer
+## Comment faire ?
 
 https://discord-interactions.readthedocs.io/en/latest/quickstart.html
+Et pour tester, il suffit de faire run python file sur vscode, les autres démerdez vous.
 
 ## Utiliser Github
 
