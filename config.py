@@ -47,10 +47,12 @@ async def c(ctx):
         await each_message.delete()
     embed = discord.Embed(
     title="Commandes",
-    description= "\n{menus Affiche les configs"
+    description= "\n{menus (Affiche menu des configs)"
     "\n!del 'n' supprimer 'n' message "
-    "\n!cmos"
-    "\n!temp",
+    "\n!cmos (Montre comment faire un CMOS)"
+    "\n!temp (Un tuto pour check les température)"
+    "\n!xmp  (Activer l'xmp dans son bios)"
+    "\n!key (Lien d'achat clé W10 Pro)",
         url="https://github.com/MerlinConnected/DiscordBot",
         timestamp=datetime.now(), 
         color=0x1abc9c
@@ -94,6 +96,11 @@ async def xmp(ctx):
         await each_message.delete()
     await ctx.send("Pour activer l'XMP --> https://www.youtube.com/watch?v=3t6J1EiHb_w")
 
-
+@bot.command()
+async def key(ctx):
+    messages = await ctx.channel.history(limit=1).flatten()
+    for each_message in messages:
+        await each_message.delete()
+    await ctx.send("Une clé d'activation Windows 10 Pro pas cher ? \nC'est par ici ! -->  https://bit.ly/3jUPNTP \nIl ne s'agit pas d'une livraison instantanée donc patiente le temps que le site t'envoie la clé par mail :slight_smile:")
 
 bot.start()
