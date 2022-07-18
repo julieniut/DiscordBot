@@ -49,7 +49,8 @@ async def c(ctx):
     title="Commandes",
     description= "\n{menus Affiche les configs"
     "\n!del 'n' supprimer 'n' message "
-    "\n!cmos",
+    "\n!cmos"
+    "\n!temp",
         url="https://github.com/MerlinConnected/DiscordBot",
         timestamp=datetime.now(), 
         color=0x1abc9c
@@ -85,6 +86,14 @@ async def temp(ctx):
 "\n- Tout laisser en auto et appuyer sur play "
 "\n- Une fois le test terminé, envoyez dans le salon discord un screen des températures de votre processeur qui se trouvent dans la partie 'Monitoring' (à droite)."
 "\nExemple ici: https://imgur.com/a/5oWKVfp")
+
+@bot.command()
+async def xmp(ctx):
+    messages = await ctx.channel.history(limit=1).flatten()
+    for each_message in messages:
+        await each_message.delete()
+    await ctx.send("Pour activer l'XMP --> https://www.youtube.com/watch?v=3t6J1EiHb_w")
+
 
 
 bot.start()
