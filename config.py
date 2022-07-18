@@ -42,6 +42,9 @@ async def cmd(ctx: interactions.CommandContext, sub_command: str, second_option:
 
 @bot.command()
 async def c(ctx):
+    messages = await ctx.channel.history(limit=1).flatten()
+    for each_message in messages:
+        await each_message.delete()
     embed = discord.Embed(
     title="Commandes",
     description= "\n{menus Affiche les configs"
@@ -62,7 +65,10 @@ async def delete(ctx, number: int):
 
 @bot.command()
 async def cmos(ctx):
-	await ctx.send("Par ici le clear CMOS --> https://www.youtube.com/watch?v=Fc0HIDKC1U0")
-    
+    messages = await ctx.channel.history(limit=1).flatten()
+    for each_message in messages:
+        await each_message.delete()
+    await ctx.send("Par ici le clear CMOS --> https://www.youtube.com/watch?v=Fc0HIDKC1U0")    
+
 
 bot.start()
