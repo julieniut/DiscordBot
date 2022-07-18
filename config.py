@@ -46,7 +46,7 @@ async def c(ctx):
     title="Commandes",
     description= "\n{menus Affiche les configs"
     "\n!del 'n' supprimer 'n' message "
-    "\n!cmos ",
+    "\n!cmos",
         url="https://github.com/MerlinConnected/DiscordBot",
         timestamp=datetime.now(), 
         color=0x1abc9c
@@ -54,12 +54,15 @@ async def c(ctx):
     msg = await ctx.send(embed=embed)
 
 @bot.command(name="del")
-async def delete(ctx, amount = 2):
-    await ctx.channel.purge(limit=amount)
+async def delete(ctx, number: int):
+    messages = await ctx.channel.history(limit=number + 1).flatten()
+
+    for each_message in messages:
+        await each_message.delete()
 
 @bot.command()
 async def cmos(ctx):
 	await ctx.send("Par ici le clear CMOS --> https://www.youtube.com/watch?v=Fc0HIDKC1U0")
-
+    
 
 bot.start()
